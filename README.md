@@ -6,3 +6,5 @@
 <h4>Tela de Inicio:</h4>
 <p>A primeira tela tem apenas a foto do logo provisória</p>
 <img src="Imagens/img_readme/tela_inicio.png">
+<p>Tela de Inicio versão mobile:</p>
+<img src="Imagens/img_readme/tela_inicio_mobile.png">
