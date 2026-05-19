@@ -59,7 +59,7 @@ li a:hover {
 
 #inicio {
     height: 100vh;
-    background-color: var(--cor3);
+    background-color: var(--cor2);
     display: flex;
     justify-content: center;
     align-items: center;
