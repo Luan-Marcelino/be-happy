@@ -20,10 +20,17 @@ nav {
     width: 100%;
     background-color: var(--cor4);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: fixed;
     z-index: 9999;
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+nav img {
+    width: 70px;
+    margin-left: 50px;
+    transition: margin-left 0.5s ease;
 }
 
 ul {
@@ -31,7 +38,7 @@ ul {
     justify-content: space-around;
     width: 50%;
     padding: 15px;
-    
+    transition: width 0.5s ease;
 }
 
 li{
@@ -43,7 +50,7 @@ li{
 li a {
     text-decoration: none;
     color: black;
-    font-size: 1.2em;
+    font-size: 1.5em;
     background-color: transparent;
     transition: background-color 0.5s ease-out, border-radius 0.5s ease-out;
     padding: 15px;
@@ -65,8 +72,8 @@ li a:hover {
     align-items: center;
 
         img {
-            margin-top: 50px;
-            width: 50%;
+            margin-top: 200px;
+            width: 45%;
             filter: drop-shadow(5px -10px 30px rgba(243, 243, 243, 0.5));
         }
 }
@@ -91,5 +98,19 @@ li a:hover {
 @media (max-width: 900px) {
     #inicio img {
         width: clamp(150px, 90%, 350px);
+    }
+
+    nav img {
+        margin-left: 0px;
+        transition: margin-left 0.5s ease;
+    }
+
+    ul {
+        width: 100%;
+        transition: width 0.5s ease;
+    }
+
+    li a{
+        font-size: 1.2em;
     }
 }
