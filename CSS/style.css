@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor1: #b499c4;
+    --cor2: #b98fbf;
+    --cor3: #efa451;
+    --cor4: #552792;
+    --cor5: #f1e8e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    width: 100%;
+    background-color: var(--cor4);
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    padding: 15px;
+    
+}
+
+li{
+    list-style: none;
+    
+}
+
+
+li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    background-color: transparent;
+    transition: background-color 0.5s ease-out, border-radius 0.5s ease-out;
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--cor5);
+}
+
+li a:hover {
+    border-radius: 25px;
+    background-color: #a46eeb49;
+    transition: background-color 0.05s ease-in, border-radius 0.05s ease-in;
+}
+
+#inicio {
+    height: 100vh;
+    background-color: var(--cor3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        img {
+            margin-top: 50px;
+            width: 500px;
+        }
+}
+
+#sobre {
+    height: 100vh;
+    background-color: var(--cor1);
+}
+
+#planos {
+    height: 100vh;
+    background-color: var(--cor4);
+}
+
+#contato {
+    height: 100vh;
+    background-color: var(--cor5);
+}
+
