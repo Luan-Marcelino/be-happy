@@ -108,9 +108,61 @@ li a:hover {
     background-color: var(--cor1);
 }
 
-#planos {
+#produtos {
     height: 100vh;
     background-color: var(--cor4);
+
+}
+
+#produtos h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 40px;
+    font-size: 3em;
+}
+
+#cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.card {
+    width:350px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.544);
+    background-color: var(--cor4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.2s ease-in, box-shadow 0.1s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.544);
+    transition: transform 0.2s ease-out, box-shadow 0.1s ease-in;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 20px 20px 0 0px;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.511);
+}
+
+.nome-box {
+    padding: 10px;
+    font-size: 2em;
+    font-weight: 600;
+    color: #fdfdfd;
+}
+
+.valor-box {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #fdfdfdb6;
 }
 
 #contato {
@@ -166,6 +218,18 @@ form div input {
         
         font-size: 1.2em;
         transition: font-size 0.5s ease;
+    }
+    #produtos {
+        height: 100%;
+        padding: 30px;
+    }
+
+    #produtos h1 {
+        font-size: 2em;
+    }
+
+    #cards {
+        flex-direction: column;
     }
 }
 
