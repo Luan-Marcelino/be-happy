@@ -38,8 +38,8 @@ const planos = [
         img: './Imagens/boxes/box2.jpeg',
         nome: 'Plano Semestral',
         valor: 110,
-        valorParcelado: [105.00, 115.00],
-        valorTotal: [630.00, 690.00],
+        valorParcelado: [105, 115],
+        valorTotal: [630, 690],
         parcelas: 6,
         descricao: 'O meio-termo, com desconto modereado'
     },
@@ -47,32 +47,39 @@ const planos = [
         img: './Imagens/boxes/box3.jpeg',
         nome: 'Plano Anual',
         valor: 120,
-        valorParcelado: [89.85, 99.85],
-        valorTotal: [1078.00, 1198.00],
+        valorParcelado: [89.99, 99.99],
+        valorTotal: [1078, 1198],
         parcelas: 12,
         descricao: 'Oferecemos o menos valor por caixa, mas isso exigirá compromisso a longo prazo. Disponibilizaremos descontos ou brindes exclusivos para quem se comprometer por mais tempo.'
     }
 ]
 
-planos.forEach((plano, i) => {
-    let parcelado0 = plano.valorParcelado[0] % 1 !== 0 ? String(plano.valorParcelado[0]).replace('.', ',') : `${plano.valorParcelado[0]},00`
-    let parcelado1 = plano.valorParcelado[1] % 1 !== 0 ? String(plano.valorParcelado[1]).replace('.', ',') : `${plano.valorParcelado[1]},00`
+function transformarValor(valor, indice, plano) {
+    switch(valor) {
+        case "parcelado":
+            return planos[plano].valorParcelado[indice] % 1 !== 0 ? String(planos[plano].valorParcelado[indice]).replace('.', ',') : `${planos[plano].valorParcelado[indice]},00`
+        break;
+        case "total":
+            return planos[plano].valorTotal[indice] % 1 !== 0 ? String(planos[plano].valorTotal[indice]).replace('.', ',') : `${planos[plano].valorTotal[indice]},00`
+        break;
+    }
+}
 
-    let total0 = plano.valorTotal[0] % 1 !== 0 ? String(plano.valorTotal[0]).replace('.', ',') : `${plano.valorTotal[0]},00`
-    let total1 = plano.valorTotal[1] % 1 !== 0 ? String(plano.valorTotal[1]).replace('.', ',') : `${plano.valorTotal[1]},00`
+planos.forEach((plano, i) => {
+    //Na função transformarValor, são 3 parametros: valor(parcelado ou total), indice(se é 0 ou 1, porque tem apenas 2 valores no array) e i(que é o indice atual do loop forEach)
 
     const card = `
         <div class="card">
             <p class="nome-box">${plano.nome}</p>
             <img src="${plano.img}" alt="Box 1">
-            <p class="valor-box-parcelado"><spam>12X</spam> R$${parcelado0} - R$${parcelado1}</p>
-            <p class="valor-box-total">Valor a vista: R$${total0} - R$${total1}</p>
+            <p class="valor-box-parcelado"><spam>${plano.parcelas}X</spam> R$${transformarValor("parcelado", 0, i)} - R$${transformarValor("parcelado", 1, i)}</p>
+            <p class="valor-box-total">Valor a vista: R$${transformarValor("total", 0, i)} - R$${transformarValor('total', 1, i)}</p>
 
             <p class="descricao-plano">${plano.descricao}</p>
         </div>
     `
-
     document.querySelector('#cards').innerHTML += card;
+    
     
 })
 
