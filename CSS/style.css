@@ -196,7 +196,6 @@ li a:hover {
 
 form {
     background-color: var(--cor2);
-    width: 500px;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -234,8 +233,7 @@ form div input {
         margin-right: 0px;
     }
 
-    li a{
-        
+    li a{ 
         font-size: 1.2em;
         transition: font-size 0.5s ease;
     }
@@ -252,7 +250,7 @@ form div input {
     #cards {
         flex-direction: column;
         align-items: center;
-        margin-top: 20px;
+        padding: 50px 0px 0px 0px ;
     }
 }
 
