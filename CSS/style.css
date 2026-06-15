@@ -248,4 +248,8 @@ form div input {
         font-size: 15px;
         transition: font-size 0.5s ease;
     }
+
+    #produtos h1 {
+        font-size: 1em;
+    }
 }
