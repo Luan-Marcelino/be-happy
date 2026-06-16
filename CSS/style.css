@@ -90,7 +90,11 @@ li a:hover {
 
 #inicio {
     height: 100vh;
-    background-color: var(--cor2);
+    background-image: url('../Imagens/rastro.png');
+    background-repeat: repeat;
+    background-size: 500px;
+    
+    background-color: var(--cor3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +110,9 @@ li a:hover {
 #sobre {
     height: 100vh;
     background-color: var(--cor1);
-
+    background-image: url('../Imagens/footprint.png');
+    background-position: 300px;
+    background-repeat: repeat;
 }
 
 #sobre h1 {
