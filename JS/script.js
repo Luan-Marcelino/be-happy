@@ -50,7 +50,7 @@ const planos = [
         valorParcelado: [89.99, 99.99],
         valorTotal: [1078, 1198],
         parcelas: 12,
-        descricao: 'Oferecemos o menos valor por caixa, mas isso exigirá compromisso a longo prazo. Disponibilizaremos descontos ou brindes exclusivos para quem se comprometer por mais tempo.'
+        descricao: 'Oferecemos o menor valor por caixa, mas isso exigirá compromisso a longo prazo. Disponibilizaremos descontos ou brindes exclusivos para quem se comprometer por mais tempo.'
     }
 ]
 

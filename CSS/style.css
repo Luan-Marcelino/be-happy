@@ -106,6 +106,18 @@ li a:hover {
 #sobre {
     height: 100vh;
     background-color: var(--cor1);
+
+}
+
+#sobre h1 {
+    color: var(--cor5);
+    text-align: center;
+    padding: 30px 0px 0px 40px;
+    font-size: 3em;
+}
+
+#sobre h1 span{
+    color: var(--cor4);
 }
 
 #planos {
@@ -118,6 +130,12 @@ li a:hover {
     text-align: center;
     padding: 40px 0px 10px 0px;
     font-size: 3em;
+    margin-bottom: 40px;
+    color: var(--cor3);
+}
+
+#planos h1 span {
+    color: var(--cor1);
 }
 
 #cards {
@@ -193,24 +211,95 @@ li a:hover {
     gap: 40px;
 }
 
+#contato h1 {
+    color: var(--cor4);
+    font-size: 3em;
+}
+
+#contato h1 span {
+    color: var(--cor2);
+}
 
 form {
     background-color: var(--cor2);
     display: flex;
-    align-items: center;
     border-radius: 20px;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    color: var(--cor4);
+    font-weight: 700;
+}
+
+.idade-pet-label {
+    text-align: center;
+}
+
+#idade-pet {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+/*ESSE CÓDIGO RETIRA AS SETAS DO INPUT NUMBER*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 form input, form textarea {
+    height: 30px;
     width: 300px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cor5);
+    padding: 10px;
+}
+
+form textarea {
+    resize: none;
+    height: 100px;
+}
+
+form div {
+    display: flex;
+    align-items: center;
 }
 
 form div input {
     width: 20px;
+    
+}
+form div label{
+    margin-top: -18px;
+    
+}
 
+form label {
+    margin-bottom: -18px;
+}
+
+form button { 
+    font-size: 2em;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    align-self: center;
+    background-color: var(--cor4);
+    color: var(--cor5);
+    transition:color 0.2s ease-in, background-color 0.2s ease-out;
+}
+
+form button:hover {
+    background-color: #7538c4;
+    transition: color 0.2s ease-in, background-color 0.2s ease-in;
+    color: var(--cor3);
 }
 
 @media (max-width: 600px) {
