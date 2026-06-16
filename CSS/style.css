@@ -111,7 +111,7 @@ li a:hover {
     height: 100vh;
     background-color: var(--cor1);
     background-image: url('../Imagens/footprint.png');
-    background-position: 300px;
+    background-position: contain;
     background-repeat: repeat;
 }
 
