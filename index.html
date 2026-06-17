@@ -52,8 +52,32 @@
             <input id="telefone" type="number" name="" id="">
             <label for="nome-pet">Nome do PET</label>
             <input id="nome-pet" type="text">
-            <label class="idade-pet-label" for="idade-pet">Idade do PET</label>
-            <input id="idade-pet" type="number" name="">
+
+            <div class="raca-idade">
+                <div class="raca">
+                    <label for="">Raça</label>
+                    <select name="racas" id="">
+                        <option value="cao">Seleciona a raça</option>
+                        <option value="cao">Cachorro</option>
+                        <option value="gato">Gato</option>
+                    </select>
+                </div>
+                <div class="idade">
+                    <label class="idade-pet-label" for="idade-pet">Idade do PET</label>
+                    <input id="idade-pet" type="number" name="">
+                </div>
+            </div>
+
+            <div class="sexo">
+                <span>SEXO</span>
+                <div>
+                    <input type="radio" name="sexo" id="macho" value="Macho">
+                    <label for="macho">Macho</label>
+                                        
+                    <input type="radio" name="sexo" id="femea" value="Fêmea">
+                    <label for="femea">Fêmea</label>
+                </div>
+            </div>
             <div>
                 <input type="checkbox" name="" id="check">
                 <label for="check">Tem restrições alimenticias?</label>

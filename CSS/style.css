@@ -208,7 +208,7 @@ li a:hover {
 }
 
 #contato {
-    height: 100vh;
+    height: 100%;
     background-color: var(--cor5);
     display: flex;
     justify-content: center;
@@ -241,12 +241,48 @@ form {
     text-align: center;
 }
 
+.raca-idade {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.raca {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.idade {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
 #idade-pet {
-    width: 50px;
+    width: 70px;
     height: 50px;
     align-self: center;
-    font-size: 1.4em;
+    font-size: 1em;
     text-align: center;
+}
+
+.sexo {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.sexo span {
+    font-size: 1.5em;
+}
+
+.sexo div input{
+    margin-left: 20px;
+    
 }
 
 /*ESSE CÓDIGO RETIRA AS SETAS DO INPUT NUMBER*/
