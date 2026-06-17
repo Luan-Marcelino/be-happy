@@ -29,8 +29,8 @@ const planos = [
         img: './Imagens/boxes/box1.jpeg',
         nome: 'Plano Mensal',
         valor: 100,
-        valorParcelado: [120, 140],
-        valorTotal: [120, 140],
+        valorParcelado: 120,
+        valorTotal: 120,
         parcelas: 1,
         descricao: 'Mais caro, mas ideal para testar o serviço por um mês sem compromisso de fidelidade.'
     },
@@ -38,8 +38,8 @@ const planos = [
         img: './Imagens/boxes/box2.jpeg',
         nome: 'Plano Semestral',
         valor: 110,
-        valorParcelado: [105, 115],
-        valorTotal: [630, 690],
+        valorParcelado: 105,
+        valorTotal: 630,
         parcelas: 6,
         descricao: 'O meio-termo, com desconto modereado'
     },
@@ -47,22 +47,15 @@ const planos = [
         img: './Imagens/boxes/box3.jpeg',
         nome: 'Plano Anual',
         valor: 120,
-        valorParcelado: [89.99, 99.99],
-        valorTotal: [1078, 1198],
+        valorParcelado: 89.99,
+        valorTotal: 1078,
         parcelas: 12,
         descricao: 'Oferecemos o menor valor por caixa, mas isso exigirá compromisso a longo prazo. Disponibilizaremos descontos ou brindes exclusivos para quem se comprometer por mais tempo.'
     }
 ]
 
-function transformarValor(valor, indice, plano) {
-    switch(valor) {
-        case "parcelado":
-            return planos[plano].valorParcelado[indice] % 1 !== 0 ? String(planos[plano].valorParcelado[indice]).replace('.', ',') : `${planos[plano].valorParcelado[indice]},00`
-        break;
-        case "total":
-            return planos[plano].valorTotal[indice] % 1 !== 0 ? String(planos[plano].valorTotal[indice]).replace('.', ',') : `${planos[plano].valorTotal[indice]},00`
-        break;
-    }
+function transformarValor(valor) {
+    return valor % 1 === 0 ? `${valor},00` : String(valor).replace('.', ',');
 }
 
 planos.forEach((plano, i) => {
@@ -70,10 +63,10 @@ planos.forEach((plano, i) => {
 
     const card = `
         <div class="card">
-            <p class="nome-box">${plano.nome}</p>
-            <img src="${plano.img}" alt="Box 1">
-            <p class="valor-box-parcelado"><spam>${plano.parcelas}X</spam> R$${transformarValor("parcelado", 0, i)} - R$${transformarValor("parcelado", 1, i)}</p>
-            <p class="valor-box-total">Valor a vista: R$${transformarValor("total", 0, i)} - R$${transformarValor('total', 1, i)}</p>
+        <img src="${plano.img}" alt="Box 1">
+        <p class="nome-box">${plano.nome}</p>
+            <p class="valor-box-parcelado"><spam>${plano.parcelas}X</spam> R$${transformarValor(plano.valorParcelado)}</p>
+            <p class="valor-box-total">Valor a vista: R$${transformarValor(plano.valorTotal)}</p>
 
             <p class="descricao-plano">${plano.descricao}</p>
         </div>
