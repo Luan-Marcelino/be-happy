@@ -254,6 +254,15 @@ form {
     gap: 25px;
 }
 
+select {
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--cor5);
+}
+
 .idade {
     display: flex;
     flex-direction: column;
@@ -277,12 +286,19 @@ form {
 }
 
 .sexo span {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .sexo div input{
     margin-left: 20px;
     
+}
+
+.sexo div {
+    background-color: var(--cor1);
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 /*ESSE CÓDIGO RETIRA AS SETAS DO INPUT NUMBER*/
