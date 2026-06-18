@@ -171,3 +171,38 @@ proximoSlide(indice)
 console.log(containerTextoSobre);
 
 //FORMULÁRIO
+
+const nomeDono = document.querySelector('#nome');
+const nomePET = document.querySelector('#nome-pet');
+const raca = document.querySelector('#raca');
+const idade = document.querySelector('#idade-pet');
+
+const restricoes = document.querySelector('#check');
+const comportamento = document.querySelector('#comportamento');
+
+const btnEnviar = document.querySelector('#enviar');
+
+function validarSexo(raca, sexo) {
+    if(raca === 'Cachorro' && sexo === 'Fêmea') {
+        return 'minha cachorra';
+    }else if(raca === 'Gato' && sexo === 'Fêmea'){
+        return 'minha gata';
+    }else {
+        return `meu ${raca}`;
+    }
+    
+}
+
+btnEnviar.addEventListener('click', (e) => {
+    e.preventDefault();
+    const sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
+    const sexo = sexoSelecionado ? sexoSelecionado.value : 'Não informado';
+
+    let mensagem = `Olá !\nMeu nome é ${nomeDono.value} e ${validarSexo(raca.value, sexo)} se chama ${nomePET.value}, ${sexo !== 'Macho' ? 'ela' : 'ele'} tem ${idade.value} anos de idade. \n${restricoes.checked ? 'Possui restrições alimentares.' : 'Não possui restrições alimentares'}.\n${comportamento.value ? 'Comportamento do PET: ' + comportamento.value : ''}`
+
+    const numero = '5511971979282';
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank')
+    
+})
+
