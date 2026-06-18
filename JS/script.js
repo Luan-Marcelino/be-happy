@@ -76,11 +76,89 @@ planos.forEach((plano, i) => {
     
 })
 
-/*
-const todosCards = document.querySelectorAll('.card')
-todosCards.forEach((card, i) => {
-    if(i % 2 == 0) {
-        card.style.backgroundColor = '#6a30b6'
+const sobreArray = [
+    {
+        img: '../Imagens/sobre/cachorro_gato_natureza.jpg',
+        titulo: 'Missão',
+        texto: 'Levar alegria, cuidado e surpresas para a vida dos pets e de quem os ama. Cada box que preparamos é uma expressão de carinho: produtos selecionados com critério, pensados para fortalecer o vínculo entre tutores e seus companheiros de quatro patas pois acreditamos que esse amor merece ser celebrado todo mês.'
+    },
+    {
+        img: '../Imagens/sobre/cachorro-e-gato.webp',
+        titulo: 'Visão',
+        texto: 'Ser a assinatura de pet box mais querida do Brasil, reconhecida por transformar cada entrega em um momento especial. Queremos que abrir uma Be Happy Pet Box seja o ponto alto da semana para o pet e para quem cuida dele.'
+    },
+    {
+        img: '../Imagens/sobre/gato-e-cachorro-correndo.avif',
+        titulo: 'Valores',
+        texto: 'Amor acima de tudo\nCada decisão começa pelo bem-estar dos pets. Selecionamos apenas produtos naturais, seguros e de alta qualidade, porque quem faz seu dia feliz merece o melhor.'
+    },
+    {
+        img: '../Imagens/sobre/gato-e-cachorro-dormindo.avif',
+        titulo: 'Conexão e afeto',
+        texto: 'Mais do que uma assinatura, somos um gesto de cuidado. Acreditamos que o tempo dedicado a brincar e mimar um pet é tempo bem investido, e queremos fazer parte desse momento.'
+    },
+    {
+        img: '../Imagens/sobre/cachorro-com-gato.jpg',
+        titulo: 'Comprometimento com a felicidade',
+        texto: 'A felicidade do seu pet é a nossa missão. Se algo não estiver perfeito, estamos aqui para fazer certo — com atenção, agilidade e muito carinho.'
     }
+]
+
+const containerTextoSobre = document.querySelector('.titulo-texto');
+const track = document.querySelector('.imagens-track')
+const imgSobre = document.querySelectorAll('.imagens-track img')
+
+const btnVai = document.querySelector('.btn-vai')
+const btnVolta = document.querySelector('.btn-volta')
+
+
+let indice = 0;
+
+function atualizarCarrossel(i) {
+    const larguraImg = imgSobre[i].clientWidth;
+    console.log(larguraImg);
+    
+    track.style.transform = `translateX(${-i * larguraImg}px)`
+
+}
+
+function ligarTempo() {
+    let segundos = 10000;
+
+    setInterval(() => {
+        atualizarCarrossel();
+        proximoSlide(indice);
+        indice = (indice + 1) % imgSobre.length
+
+    }, segundos)
+}
+
+
+
+function proximoSlide(i) {
+    const elementoSobre = `
+                    <h1 >${sobreArray[i].titulo}</h1>
+                    <p>${sobreArray[i].texto}</p>
+                
+            `
+    containerTextoSobre.innerHTML = elementoSobre;
+}
+
+
+btnVai.addEventListener('click', () => {
+    console.log('apertou');
+    if(indice <= sobreArray.length) {
+        indice++
+        atualizarCarrossel(indice);
+        proximoSlide(indice)
+
+    }else {
+        indice = 0
+        atualizarCarrossel(indice);
+        proximoSlide(indice)
+    }
+    
 })
-    */
+
+proximoSlide(indice)
+
