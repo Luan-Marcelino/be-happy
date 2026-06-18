@@ -29,7 +29,7 @@ const planos = [
         img: './Imagens/boxes/box1.jpeg',
         nome: 'Plano Mensal',
         valor: 100,
-        valorParcelado: 120,
+        valorParcelado: 140,
         valorTotal: 120,
         parcelas: 1,
         descricao: 'Mais caro, mas ideal para testar o serviço por um mês sem compromisso de fidelidade.'
