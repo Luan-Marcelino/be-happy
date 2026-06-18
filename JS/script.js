@@ -136,6 +136,7 @@ function iniciarCarrossel() {
 
 
 function proximoSlide(i) {
+    
     const elementoSobre = `
                     <h1 >${sobreArray[i].titulo}</h1>
                     <p>${sobreArray[i].texto}</p>
@@ -158,7 +159,7 @@ btnVai.addEventListener('click', () => {
 btnVolta.addEventListener('click', () => {
     clearInterval(temporizador)
 
-    indice = (indice - 1) % imgSobre.length
+    indice = (indice - 1 + imgSobre.length) % imgSobre.length
     proximoSlide(indice)
     atualizarCarrossel()
 
@@ -167,3 +168,4 @@ btnVolta.addEventListener('click', () => {
 
 iniciarCarrossel()
 proximoSlide(indice)
+console.log(containerTextoSobre);
