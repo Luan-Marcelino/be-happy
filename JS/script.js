@@ -198,7 +198,7 @@ btnEnviar.addEventListener('click', (e) => {
     const sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
     const sexo = sexoSelecionado ? sexoSelecionado.value : 'Não informado';
 
-    let mensagem = `Olá !\nMeu nome é ${nomeDono.value} e ${validarSexo(raca.value, sexo)} se chama ${nomePET.value}, ${sexo !== 'Macho' ? 'ela' : 'ele'} tem ${idade.value} anos de idade. \n${restricoes.checked ? 'Possui restrições alimentares.' : 'Não possui restrições alimentares'}.\n${comportamento.value ? 'Comportamento do PET: ' + comportamento.value : ''}`
+    let mensagem = `Olá !\nMeu nome é ${nomeDono.value} e ${validarSexo(raca.value, sexo)} se chama ${nomePET.value}, ${sexo !== 'Macho' ? 'ela' : 'ele'} tem ${idade.value} anos de idade. \n${restricoes.checked ? 'Possui restrições alimentares.' : 'Não possui restrições alimentares.'}\n${comportamento.value ? 'Comportamento do PET: ' + comportamento.value : ''}`
 
     const numero = '5511971979282';
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
