@@ -113,24 +113,24 @@ const btnVolta = document.querySelector('.btn-volta')
 
 
 let indice = 0;
+let temporizador;
 
-function atualizarCarrossel(i) {
-    const larguraImg = imgSobre[i].clientWidth;
+function atualizarCarrossel() {
+    const larguraImg = imgSobre[0].clientWidth;
     console.log(larguraImg);
     
-    track.style.transform = `translateX(${-i * larguraImg}px)`
+    track.style.transform = `translateX(${-indice * larguraImg}px)`
 
 }
 
-function ligarTempo() {
-    let segundos = 10000;
-
-    setInterval(() => {
-        atualizarCarrossel();
-        proximoSlide(indice);
+function iniciarCarrossel() {
+    temporizador = setInterval(() => {
         indice = (indice + 1) % imgSobre.length
 
-    }, segundos)
+        atualizarCarrossel();
+        proximoSlide(indice);
+        
+    }, 2000)
 }
 
 
@@ -146,19 +146,24 @@ function proximoSlide(i) {
 
 
 btnVai.addEventListener('click', () => {
-    console.log('apertou');
-    if(indice <= sobreArray.length) {
-        indice++
-        atualizarCarrossel(indice);
-        proximoSlide(indice)
+    clearInterval(temporizador)
 
-    }else {
-        indice = 0
-        atualizarCarrossel(indice);
-        proximoSlide(indice)
-    }
-    
+    indice = (indice + 1) % imgSobre.length
+    proximoSlide(indice)
+    atualizarCarrossel()
+
+    iniciarCarrossel()
 })
 
-proximoSlide(indice)
+btnVolta.addEventListener('click', () => {
+    clearInterval(temporizador)
 
+    indice = (indice - 1) % imgSobre.length
+    proximoSlide(indice)
+    atualizarCarrossel()
+
+    iniciarCarrossel()
+})
+
+iniciarCarrossel()
+proximoSlide(indice)
