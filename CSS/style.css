@@ -442,6 +442,9 @@ form button:hover {
 }
 
 @media (max-width: 600px) {
+    #inicio {
+        height: 100vh;
+    }
     #inicio img {
         width: clamp(150px, 90%, 350px);
     }

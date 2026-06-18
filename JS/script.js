@@ -169,3 +169,4 @@ btnVolta.addEventListener('click', () => {
 iniciarCarrossel()
 proximoSlide(indice)
 console.log(containerTextoSobre);
+
