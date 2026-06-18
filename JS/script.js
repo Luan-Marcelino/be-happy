@@ -130,7 +130,7 @@ function iniciarCarrossel() {
         atualizarCarrossel();
         proximoSlide(indice);
         
-    }, 2000)
+    }, 12000)
 }
 
 
@@ -170,3 +170,4 @@ iniciarCarrossel()
 proximoSlide(indice)
 console.log(containerTextoSobre);
 
+//FORMULÁRIO
